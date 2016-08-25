@@ -1,0 +1,16 @@
+<form class="searchForm">
+    <label>Enter your text to search
+        <input type="text" ng-model="tsrchCtrl.searchText">
+    </label>
+    <button ng-click="tsrchCtrl.searchButtonClick()">Search</button>
+    <button ng-click="tsrchCtrl.resetBtnClick()">Reset</button>
+    <div>Total Number of search {{tsrchCtrl.result.length}}</div>
+</form>
+<div class='scroll'>
+    <div class="contentArea">
+
+        <div ng-repeat="items in tsrchCtrl.result | alphabetical:tsrchCtrl.result">
+            {{items.name}}
+        </div>
+    </div>
+</div>

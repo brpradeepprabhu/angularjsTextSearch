@@ -1,0 +1,5 @@
+annotate/*
+concat/*
+node_modules/*
+.idea/*
+.brackets.json

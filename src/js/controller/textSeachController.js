@@ -1,9 +1,10 @@
 (function () {
+    "use strict";
     var textSearchController = function ($http) {
         var vm = this;
         this.searchText = '';
         this.http = $http;
-        $http.get('data.json').success(function (data, status, headers, config) {
+        $http.get('data/data.json').success(function (data, status, headers, config) {
             vm.data = data;
             vm.result = data;
         }).error(function (data, status, headers, config) {

@@ -1,5 +1,5 @@
 angular.module("textSearchApp").filter('alphabetical', function () {
-    return function (result) {
+    "use strict";    return function (result) {
         if (typeof (result) !== "undefined") {
             result.sort(function (a, b) {
                 if (a.name < b.name) return -1;
