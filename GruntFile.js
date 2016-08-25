@@ -12,9 +12,9 @@ module.exports = function (grunt) {
                         src: ['src/js/app.js', 'src/js/controller/textSeachController.js', 'src/js/controller/mainController.js', 'src/js/filter/alphabeticalFilter.js'],
                         rename: function (dest, src) {
                             return 'annotate/' + src;
-                        },
-                },
-            ],
+                        }
+                }
+            ]
             },
         },
         concat: {
@@ -29,11 +29,28 @@ module.exports = function (grunt) {
                 src: ['./concat/app.js'],
                 dest: './build/app.min.js'
             }
-        }
+        },
+        ngdocs: {
+            all: ['src/**/*.js']
+        },
+        cssmin:{
+            
+            combine:{
+                files:{
+                    'build/css/main.min.css' :["src/css/*.css"]
+                }
+            }
+            
+        },
+       
     });
 
+
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-ng-annotate');
-    grunt.registerTask('default', ['ngAnnotate', 'concat', 'uglify']);
+    grunt.loadNpmTasks('grunt-ngdocs');
+
+    grunt.registerTask('default', ['cssmin','ngAnnotate', 'concat', 'uglify', 'ngdocs']);
 };

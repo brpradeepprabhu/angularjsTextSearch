@@ -1,41 +1,88 @@
 (function () {
+  
     "use strict";
-    var textSearchController = function ($http) {
+    /**
+    * @ngdoc controller
+    * @name textSearchApp.controller:textSearchController
+    * @Description 
+     Text search controller get the value from search text model and filter the value from the data array and store it in result array to display in the view  
+    * @param {Object} $http - http provider of angularjs    
+     */
+    var p, textSearchController = function ($http) {
         var vm = this;
-        this.searchText = '';
-        this.http = $http;
+        /**
+         * model variable for the searching the text
+         *
+         * @property searchText
+         * @type String
+         * @default ""
+         */
+        vm.searchText = '';
+        /**
+         * Object to store the JSON
+         *
+         * @property data
+         * @type Object
+         * @default "{}"
+         */
+        vm.data = {};
+        /**
+         * Object to store all the result
+         *
+         * @property result
+         * @type Object
+         * @default "{}"
+         */
+
+        vm.result = {};
+
         $http.get('data/data.json').success(function (data, status, headers, config) {
+
             vm.data = data;
             vm.result = data;
         }).error(function (data, status, headers, config) {
             console.log("No data found..");
         });
-    }
+    };
+    textSearchController.constructor = textSearchController;
+    p = textSearchController.prototype;
+    /**
+     * @ngdoc method
+     * @name searchButtonClick
+     * @methodOf textSearchApp.controller:textSearchController
+     * @description
+     * On click of search button, filter the result from the data array and push the object to result array
+     * 
+    */
 
-    var p = textSearchController.prototype;
     p.searchButtonClick = function () {
         if (!this.searchText) {
             this.result = this.data;
             return;
         }
-        var result = [];
-        var searchText = this.searchText.toLowerCase();       
+        var result = [],
+            searchText = this.searchText.toLowerCase();
+
         angular.forEach(this.data, function (item) {
 
             if (item.name.toLowerCase().indexOf(searchText) !== -1) {
                 result.push(item);
             }
         });
-        this.result = result
-      
-
-
-    }
+        this.result = result;
+    };
+    /**
+     * @ngdoc method
+     * @name resetBtnClick
+     * @methodOf textSearchApp.controller:textSearchController
+     * @description
+     * On click of reset button, clear the searchModel and display all the data
+     * 
+    */    
     p.resetBtnClick = function () {
         this.result = this.data;
         this.searchText = '';
-    }
+    };
     angular.module("textSearchApp").controller('textSearchController', textSearchController);
     textSearchController.$inject = ['$http'];
 }());
-
