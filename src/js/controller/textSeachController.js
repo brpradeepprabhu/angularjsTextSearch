@@ -1,12 +1,12 @@
 (function () {
-  
+
     "use strict";
     /**
-    * @ngdoc controller
-    * @name textSearchApp.controller:textSearchController
-    * @Description 
-     Text search controller get the value from search text model and filter the value from the data array and store it in result array to display in the view  
-    * @param {Object} $http - http provider of angularjs    
+     * @ngdoc controller
+     * @name textSearchApp.controller:textSearchController
+     * @Description
+     Text search controller get the value from search text model and filter the value from the data array and store it in result array to display in the view
+     * @param {Object} $http - http provider of angularjs
      */
     var p, textSearchController = function ($http) {
         var vm = this;
@@ -22,25 +22,23 @@
          * Object to store the JSON
          *
          * @property data
-         * @type Object
-         * @default "{}"
+         * @type Array
+         * @default "[]"
          */
         vm.data = {};
         /**
          * Object to store all the result
          *
          * @property result
-         * @type Object
-         * @default "{}"
+         * @type Array
+         * @default "[]"
          */
 
-        vm.result = {};
-
-        $http.get('data/data.json').success(function (data, status, headers, config) {
-
+        vm.result = [];
+        $http.get('data/data.json').success(function (data) {
             vm.data = data;
             vm.result = data;
-        }).error(function (data, status, headers, config) {
+        }).error(function (data) {
             console.log("No data found..");
         });
     };
@@ -52,8 +50,8 @@
      * @methodOf textSearchApp.controller:textSearchController
      * @description
      * On click of search button, filter the result from the data array and push the object to result array
-     * 
-    */
+     *
+     */
 
     p.searchButtonClick = function () {
         if (!this.searchText) {
@@ -76,9 +74,9 @@
      * @name resetBtnClick
      * @methodOf textSearchApp.controller:textSearchController
      * @description
-     * On click of reset button, clear the searchModel and display all the data
-     * 
-    */    
+     * On click of reset button, clear the search text model value and display all the name in the json
+     *
+     */
     p.resetBtnClick = function () {
         this.result = this.data;
         this.searchText = '';

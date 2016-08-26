@@ -9,7 +9,11 @@ angular.module("textSearchApp", ['ngRoute']).config(function ($compileProvider, 
             templateUrl: "partial/home.html",
             controller: "textSearchController",
             controllerAs: "tsrchCtrl"
-        }).otherwise({
+        })
+        .when("/sample", {
+            templateUrl: "partial/sample.html"
+        })
+        .otherwise({
             redirectTo: '/'
         });
     $compileProvider.debugInfoEnabled(false);

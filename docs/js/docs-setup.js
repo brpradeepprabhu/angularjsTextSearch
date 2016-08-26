@@ -27,7 +27,7 @@ NG_DOCS={
       "shortName": "textSearchController",
       "type": "controller",
       "moduleName": "textSearchApp",
-      "keywords": "$http angularjs api array button clear click controller data display filter http method model object provider push reset resetbtnclick result search searchbuttonclick searchmodel store text textsearchapp view"
+      "keywords": "$http angularjs api array button clear click controller data display filter http json method model object provider push reset resetbtnclick result search searchbuttonclick store text textsearchapp view"
     },
     {
       "section": "api",
