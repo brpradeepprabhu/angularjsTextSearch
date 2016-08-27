@@ -59,6 +59,15 @@ button {
     height: 400px;
     margin: 0 10%;
 }
+.sample
+{
+    margin: 0 3% ;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    height: 400px;
+
+}
 @media (max-width: 768px)
 {
     button

@@ -19,7 +19,7 @@ NG_DOCS={
       "type": "controller",
       "moduleName": "textSearchApp",
       "shortDescription": "To handle the all the models and events for main page   ",
-      "keywords": "api controller events handle main models textsearchapp"
+      "keywords": "api button click controller events handle hide icon main menu method models nav navclick resize textsearchapp"
     },
     {
       "section": "api",

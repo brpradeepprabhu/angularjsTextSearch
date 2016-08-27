@@ -1,32 +1,37 @@
 {
-    "name": "angulartextsearch",
-    "version": "1.0.0",
-    "description": "Angular text search and minify using grunt",
-    "main": "index.html",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/brpradeepprabhu/angularjsTextSearch.git"
-    },
-    "keywords": [
+  "name": "angulartextsearch",
+  "version": "1.0.0",
+  "description": "Angular text search and minify using grunt",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brpradeepprabhu/angularjsTextSearch.git"
+  },
+  "keywords": [
     "angularjs",
     "text",
     "search\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[3~\u001b[3~"
   ],
-    "author": "Pradeep Prabhu",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/brpradeepprabhu/angularjsTextSearch/issues"
-    },
-    "homepage": "https://github.com/brpradeepprabhu/angularjsTextSearch#readme",
-    "devDependencies": {
-        "grunt": "^1.0.1",
-        "grunt-contrib-concat": "^1.0.1",
-        "grunt-contrib-uglify": "^2.0.0",
-        "grunt-ng-annotate": "^2.0.2",
-        "grunt-ngdoc": "^2.0.2",
-        "grunt-contrib-cssmin": "^2.0.2"
-    }
+  "author": "Pradeep Prabhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brpradeepprabhu/angularjsTextSearch/issues"
+  },
+  "homepage": "https://github.com/brpradeepprabhu/angularjsTextSearch#readme",
+  "devDependencies": {
+    "angular-mocks": "^1.5.8",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.0.2",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-ng-annotate": "^2.0.2",
+    "grunt-ngdoc": "^2.0.2",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.2.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.1"
+  }
 }
